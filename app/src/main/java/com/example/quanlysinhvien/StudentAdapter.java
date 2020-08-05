@@ -62,7 +62,7 @@ public class StudentAdapter extends BaseAdapter {
 
         txtID.setText(String.valueOf(student.getId()));
         txtName.setText(student.getName());
-        txtAge.setText(String.valueOf(student.getAge()));
+        txtAge.setText(String.valueOf(student.getBirth()));
         txtAddress.setText(student.getAddress());
         txtGpa.setText(String.valueOf(student.getGpa()));
         imgAvatar.setImageResource(student.getAvatar());

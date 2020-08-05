@@ -4,51 +4,39 @@ import java.io.Serializable;
 
 public class Student implements Serializable {
 
-    private int id;
+    private String id;
     private String name;
-    private int age;
+    private String birth;
     private String address;
-    private float gpa;
+    private String gpa;
     private int avatar;
 
     public Student() {
 
     }
 
-    public Student(String name) {
-        this.name = name;
-    }
-
-    public Student(int id, String name, int age, String address, float gpa) {
+    public Student(String id, String name, String birth, String address, String gpa) {
         this.id = id;
         this.name = name;
-        this.age = age;
+        this.birth = birth;
         this.address = address;
         this.gpa = gpa;
     }
 
-    public Student(int id, String name, int age, String address, float gpa, int avatar) {
+    public Student(String id, String name, String age, String address, String gpa, int avatar) {
         this.id = id;
         this.name = name;
-        this.age = age;
+        this.birth = age;
         this.address = address;
         this.gpa = gpa;
         this.avatar = avatar;
     }
 
-    public int getAvatar() {
-        return avatar;
-    }
-
-    public void setAvatar(int avatar) {
-        this.avatar = avatar;
-    }
-
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -60,12 +48,12 @@ public class Student implements Serializable {
         this.name = name;
     }
 
-    public int getAge() {
-        return age;
+    public String getBirth() {
+        return birth;
     }
 
-    public void setAge (int age) {
-        this.age = age;
+    public void setBirth(String birth) {
+        this.birth = birth;
     }
 
     public String getAddress() {
@@ -76,11 +64,19 @@ public class Student implements Serializable {
         this.address = address;
     }
 
-    public float getGpa() {
+    public String getGpa() {
         return gpa;
     }
 
-    public void setGpa(float gpa) {
+    public void setGpa(String gpa) {
         this.gpa = gpa;
+    }
+
+    public int getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(int avatar) {
+        this.avatar = avatar;
     }
 }

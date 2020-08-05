@@ -27,7 +27,7 @@
     <EditText
             android:layout_width="88dp"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
+            android:inputType="number"
             android:hint="ID"
             android:id="@+id/editTextId"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="19dp"
@@ -44,7 +44,7 @@
     <EditText
             android:layout_width="103dp"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
+            android:inputType="number"
             android:hint="Năm sinh"
             android:ems="10"
             android:id="@+id/editTextBirth"
@@ -64,7 +64,7 @@
     <EditText
             android:layout_width="106dp"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
+            android:inputType="numberDecimal"
             android:hint="GPA"
             android:ems="10"
             android:id="@+id/editTextGpa"
