@@ -16,16 +16,18 @@
             android:layout_height="wrap_content" android:id="@+id/buttonEdit"
             android:layout_marginEnd="21dp" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextGpa" android:layout_marginTop="16dp"/>
+
     <ListView
-            android:layout_width="374dp"
-            android:layout_height="390dp"
+            android:layout_width="312dp"
+            android:layout_height="0dp"
             android:id="@+id/listViewStudent" app:layout_constraintTop_toBottomOf="@+id/buttonAdd"
             android:layout_marginTop="16dp" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="16dp" android:layout_marginEnd="16dp" app:layout_constraintEnd_toEndOf="parent">
+            android:layout_marginStart="16dp" android:layout_marginEnd="16dp" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.504" app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="21dp">
     </ListView>
-
     <EditText
-            android:layout_width="88dp"
+            android:layout_width="69dp"
             android:layout_height="wrap_content"
             android:inputType="number"
             android:hint="ID"
@@ -33,7 +35,7 @@
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="19dp"
             app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="21dp"/>
     <EditText
-            android:layout_width="160dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:hint="Họ tên"
@@ -42,7 +44,7 @@
             app:layout_constraintStart_toEndOf="@+id/editTextId" app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="21dp"/>
     <EditText
-            android:layout_width="103dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:inputType="number"
             android:hint="Năm sinh"
@@ -52,7 +54,7 @@
             app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="21dp" android:layout_marginEnd="19dp"
             app:layout_constraintEnd_toEndOf="parent"/>
     <EditText
-            android:layout_width="230dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:hint="Địa chỉ"
@@ -62,7 +64,7 @@
             app:layout_constraintTop_toBottomOf="@+id/editTextId" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="21dp"/>
     <EditText
-            android:layout_width="106dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:inputType="numberDecimal"
             android:hint="GPA"
@@ -70,7 +72,7 @@
             android:id="@+id/editTextGpa"
             app:layout_constraintTop_toBottomOf="@+id/editTextName"
             android:layout_marginEnd="19dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="4dp"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="5dp"
             app:layout_constraintStart_toEndOf="@+id/editTextAddress"/>
     <Button
             android:text="Sắp xếp"

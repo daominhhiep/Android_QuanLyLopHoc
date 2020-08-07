@@ -80,4 +80,15 @@ public class Student implements Serializable {
         this.avatar = avatar;
     }
 
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", birth='" + birth + '\'' +
+                ", address='" + address + '\'' +
+                ", gpa='" + gpa + '\'' +
+                ", avatar=" + avatar +
+                '}';
+    }
 }
