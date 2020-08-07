@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
     private static final String simpleFileName = "note.txt";
     int location = -1;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
         onClickListView();
         onLongClickListView();
     }
+
+
 
     private void confirmDelete(final int location){
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
@@ -117,7 +118,6 @@ public class MainActivity extends AppCompatActivity {
 
                 listStudent.add(new Student(id, name, birth, address, gpa));
                 listStudent.remove(location);
-//                saveData();
                 adapter.notifyDataSetChanged();
             }
         });
@@ -171,6 +171,7 @@ public class MainActivity extends AppCompatActivity {
         listStudent.add(new Student("2", "Đào Minh Hiệp", "23", "Hà Nội", " 8.5", R.drawable.batman));
         listStudent.add(new Student("3", "Nguyễn Đông Nam", "23", "Đông Anh", "6.0", R.drawable.male));
         listStudent.add(new Student("4", "Lê Đức Tâm", "28", "Hà Nội", "9.0", R.drawable.male));
+        listStudent.add(new Student("5", "Nguyễn Văn Dũng", "23", "Hà Nội", "6.5", R.drawable.female));
     }
 
 
