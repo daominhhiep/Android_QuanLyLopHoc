@@ -1,35 +1,22 @@
-package com.example.quanlysinhvien;
+package com.example.studentmanager;
 
 import java.io.Serializable;
 
-public class Student implements Serializable {
-
+public class Person implements Serializable {
     private String id;
     private String name;
     private String birth;
     private String address;
-    private String gpa;
-    private int avatar;
 
-    public Student() {
+    private  Person(){
 
     }
 
-    public Student(String id, String name, String birth, String address, String gpa) {
+    public Person(String id, String name, String birth, String address) {
         this.id = id;
         this.name = name;
         this.birth = birth;
         this.address = address;
-        this.gpa = gpa;
-    }
-
-    public Student(String id, String name, String age, String address, String gpa, int avatar) {
-        this.id = id;
-        this.name = name;
-        this.birth = age;
-        this.address = address;
-        this.gpa = gpa;
-        this.avatar = avatar;
     }
 
     public String getId() {
@@ -64,31 +51,13 @@ public class Student implements Serializable {
         this.address = address;
     }
 
-    public String getGpa() {
-        return gpa;
-    }
-
-    public void setGpa(String gpa) {
-        this.gpa = gpa;
-    }
-
-    public int getAvatar() {
-        return avatar;
-    }
-
-    public void setAvatar(int avatar) {
-        this.avatar = avatar;
-    }
-
     @Override
     public String toString() {
-        return "Student{" +
+        return "Person{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", birth='" + birth + '\'' +
                 ", address='" + address + '\'' +
-                ", gpa='" + gpa + '\'' +
-                ", avatar=" + avatar +
                 '}';
     }
 }

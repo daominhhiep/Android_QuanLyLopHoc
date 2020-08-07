@@ -1,4 +1,4 @@
-package com.example.quanlysinhvien;
+package com.example.studentmanager;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -65,7 +65,7 @@ public class StudentAdapter extends BaseAdapter {
         txtAge.setText(String.valueOf(student.getBirth()));
         txtAddress.setText(student.getAddress());
         txtGpa.setText(String.valueOf(student.getGpa()));
-        imgAvatar.setImageResource(student.getAvatar());
+        imgAvatar.setImageResource(student.getAvatarStudent());
 
         return view;
     }

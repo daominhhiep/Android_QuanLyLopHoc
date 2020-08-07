@@ -1,5 +1,4 @@
-package com.example.quanlysinhvien;
-
+package com.example.studentmanager;
 import java.util.Comparator;
 
 public class SortByGpa implements Comparator<Student> {

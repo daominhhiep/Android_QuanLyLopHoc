@@ -1,4 +1,4 @@
-package com.example.quanlysinhvien;
+package com.example.studentmanager;
 
 import java.util.Comparator;
 

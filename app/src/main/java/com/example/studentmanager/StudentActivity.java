@@ -1,7 +1,7 @@
-package com.example.quanlysinhvien;
+package com.example.studentmanager;
+
 
 import android.content.DialogInterface;
-import android.os.Environment;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.*;
@@ -14,7 +14,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class StudentActivity extends AppCompatActivity {
+    private static final String STUDENT_FILE = "student.txt";
+    int index = -1;
     ListView listViewStudent;
     List<Student> listStudent;
     StudentAdapter adapter;
@@ -22,17 +24,14 @@ public class MainActivity extends AppCompatActivity {
     EditText editTextId, editTextName, editTextBirth, editTextAddress, editTextGpa;
     RadioGroup groupGender;
     RadioButton checkMale, checkFemale;
-    private static final String simpleFileName = "note.txt";
-    int location = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_student);
 
-        setContentView(R.layout.activity_main);
-        listStudent = read();
         initView();
-        list();
+        listStudent = read();
         adapter = new StudentAdapter(this, R.layout.row_student, listStudent);
         listViewStudent.setAdapter(adapter);
 
@@ -61,10 +60,10 @@ public class MainActivity extends AppCompatActivity {
     private int getGender() {
         int gender = 0;
         if (checkMale.isChecked()) {
-            gender = R.drawable.male;
+            gender = R.drawable.student_man;
         }
         if (checkFemale.isChecked()) {
-            gender = R.drawable.female;
+            gender = R.drawable.student_woman;
         }
         return gender;
     }
@@ -78,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
                 editTextBirth.setText(listStudent.get(i).getBirth());
                 editTextAddress.setText(listStudent.get(i).getAddress());
                 editTextGpa.setText(listStudent.get(i).getGpa());
-                location = i;
+                index = i;
             }
         });
     }
@@ -175,7 +174,7 @@ public class MainActivity extends AppCompatActivity {
                 String gpa = editTextGpa.getText().toString();
                 int gender = getGender();
                 listStudent.add(new Student(id, name, birth, address, gpa, gender));
-                listStudent.remove(location);
+                listStudent.remove(index);
                 write(listStudent);
                 adapter.notifyDataSetChanged();
             }
@@ -194,22 +193,15 @@ public class MainActivity extends AppCompatActivity {
         groupGender = (RadioGroup) findViewById(R.id.checkGender);
         checkMale = (RadioButton) findViewById(R.id.checkMale);
         checkFemale = (RadioButton) findViewById(R.id.checkFemale);
-    }
-
-    private void list() {
         listViewStudent = (ListView) findViewById(R.id.listViewStudent);
-        listStudent = read();
     }
 
     private void write(List<Student> studentList) {
         try {
-            FileOutputStream fileOutputStream = this.openFileOutput(simpleFileName, MODE_PRIVATE);
+            FileOutputStream fileOutputStream = this.openFileOutput(STUDENT_FILE, MODE_PRIVATE);
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
             objectOutputStream.writeObject(studentList);
             objectOutputStream.close();
-            System.out.println("luu thanh cong");
-
-            Toast.makeText(this,"sjfshdfjsd",Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
             Toast.makeText(this, "Error:" + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
@@ -217,14 +209,11 @@ public class MainActivity extends AppCompatActivity {
 
     private List<Student> read() {
         List<Student> studentList = new ArrayList<>();
-
         try {
-            FileInputStream fileInputStream = this.openFileInput(simpleFileName);
+            FileInputStream fileInputStream = this.openFileInput(STUDENT_FILE);
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
             studentList = (List<Student>) objectInputStream.readObject();
             objectInputStream.close();
-
-            Toast.makeText(this,studentList.get(studentList.size()-1).getName() + studentList.get(studentList.size()-1).getGpa(),Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
             Toast.makeText(this, "Error:" + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
