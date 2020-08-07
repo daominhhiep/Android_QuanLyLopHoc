@@ -8,10 +8,6 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -22,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
     StudentAdapter adapter;
     Button buttonAdd, buttonEdit, buttonSort;
     EditText editTextId, editTextName, editTextBirth, editTextAddress, editTextGpa;
+    RadioGroup groupGender;
+    RadioButton checkMale, checkFemale;
     private static final String simpleFileName = "note.txt";
     int location = -1;
 
@@ -35,13 +33,31 @@ public class MainActivity extends AppCompatActivity {
         adapter = new StudentAdapter(this, R.layout.row_student, listStudent);
         listViewStudent.setAdapter(adapter);
 
+        onCheckGender();
         onClickButtonAdd();
         onClickButtonEdit();
         onClickButtonSort();
         onClickListView();
         onLongClickListView();
+
+
     }
 
+    private void onCheckGender() {
+        groupGender.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                switch (i){
+                    case R.id.checkMale:
+                        Toast.makeText(MainActivity.this,"Giới tính nam", Toast.LENGTH_SHORT);
+                        break;
+                    case R.id.checkFemale:
+                        Toast.makeText(MainActivity.this,"Giới tính nữ", Toast.LENGTH_SHORT);
+                        break;
+                }
+            }
+        });
+    }
 
 
     private void confirmDelete(final int location){
@@ -146,7 +162,14 @@ public class MainActivity extends AppCompatActivity {
                 String birth = editTextBirth.getText().toString();
                 String address = editTextAddress.getText().toString();
                 String gpa = editTextGpa.getText().toString();
-                listStudent.add(new Student(id, name, birth, address, gpa));
+                int  gender = 0;
+                if(checkMale.isChecked()){
+                    gender = R.drawable.male;
+                }
+                if (checkFemale.isChecked()){
+                    gender = R.drawable.female;
+                }
+                listStudent.add(new Student(id, name, birth, address, gpa, gender));
                 adapter.notifyDataSetChanged();
             }
         });
@@ -161,7 +184,9 @@ public class MainActivity extends AppCompatActivity {
         editTextBirth = (EditText) findViewById(R.id.editTextBirth);
         editTextAddress = (EditText) findViewById(R.id.editTextAddress);
         editTextGpa = (EditText) findViewById(R.id.editTextGpa);
-
+        groupGender = (RadioGroup) findViewById(R.id.checkGender);
+        checkMale = (RadioButton) findViewById(R.id.checkMale);
+        checkFemale = (RadioButton) findViewById(R.id.checkFemale);
     }
 
     private void list() {
