@@ -5,9 +5,11 @@ import android.view.View;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import com.example.studentmanager.student.StudentActivity;
+import com.example.studentmanager.teacher.TeacherActivity;
 
 public class MenuActivity extends AppCompatActivity {
-    Button buttonStudentManager, buttonTeacherManager, buttonChangePassword;
+    Button buttonStudentManager, buttonTeacherManager, buttonClassStudy;
 
 
     @Override
@@ -17,7 +19,7 @@ public class MenuActivity extends AppCompatActivity {
 
         buttonTeacherManager = (Button) findViewById(R.id.teacherManager);
         buttonStudentManager = (Button) findViewById(R.id.studentManager);
-        buttonChangePassword = (Button) findViewById(R.id.changePass);
+        buttonClassStudy = (Button) findViewById(R.id.classStudy);
 
         buttonTeacherManager.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,6 +33,14 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent myIntent = new Intent(MenuActivity.this, StudentActivity.class);
+                MenuActivity.this.startActivity(myIntent);
+            }
+        });
+
+        buttonClassStudy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(MenuActivity.this, ClassActivity.class);
                 MenuActivity.this.startActivity(myIntent);
             }
         });

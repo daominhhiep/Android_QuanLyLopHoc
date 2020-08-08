@@ -11,6 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 public class LoginActivity extends AppCompatActivity {
     EditText editTextUsername, editTextPassword;
     Button buttonAgree, buttonDisagree;
+    String usernameDefault = "admin";
+    String passwordDefault = "admin";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String username = editTextUsername.getText().toString().trim();
                 String password = editTextPassword.getText().toString().trim();
-                if (username.equals("admin") && password.equals("admin")) {
+                if (username.equals(usernameDefault) && password.equals(passwordDefault)) {
                     Toast.makeText(LoginActivity.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
                     Intent myIntent = new Intent(LoginActivity.this, MenuActivity.class);
                     LoginActivity.this.startActivity(myIntent);

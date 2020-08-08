@@ -1,4 +1,4 @@
-package com.example.studentmanager;
+package com.example.studentmanager.student;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.example.studentmanager.R;
+import com.example.studentmanager.student.Student;
 
 
 import java.util.List;

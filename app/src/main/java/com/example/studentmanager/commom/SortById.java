@@ -1,4 +1,6 @@
-package com.example.studentmanager;
+package com.example.studentmanager.commom;
+
+import com.example.studentmanager.commom.Person;
 
 import java.util.Comparator;
 

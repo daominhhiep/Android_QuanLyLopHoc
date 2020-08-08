@@ -1,4 +1,6 @@
-package com.example.studentmanager;
+package com.example.studentmanager.student;
+
+import com.example.studentmanager.commom.Person;
 
 import java.io.Serializable;
 

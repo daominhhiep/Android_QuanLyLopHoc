@@ -1,14 +1,14 @@
-package com.example.studentmanager;
+package com.example.studentmanager.teacher;
+
+import com.example.studentmanager.commom.Person;
 
 public class Teacher extends Person {
     private String roles;
     private int avatarTeacher;
 
-
     public Teacher(String id, String name, String birth, String address) {
         super(id, name, birth, address);
     }
-
 
     public Teacher(String id, String name, String birth, String address, String roles) {
         super(id, name, birth, address);

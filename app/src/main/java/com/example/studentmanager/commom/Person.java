@@ -1,4 +1,4 @@
-package com.example.studentmanager;
+package com.example.studentmanager.commom;
 
 import java.io.Serializable;
 

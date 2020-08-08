@@ -31,14 +31,14 @@
             app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="200dp"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"/>
     <Button
-            android:text="Đổi mật khẩu"
+            android:text="Lớp học"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/bellota_bold"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/custom_button"
-            android:id="@+id/changePass"
+            android:id="@+id/classStudy"
             app:layout_constraintTop_toBottomOf="@+id/studentManager" android:layout_marginTop="50dp"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
