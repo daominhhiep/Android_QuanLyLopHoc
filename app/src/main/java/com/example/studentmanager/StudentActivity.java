@@ -135,6 +135,10 @@ public class StudentActivity extends AppCompatActivity {
                         Collections.sort(listStudent, new SortById());
                         adapter.notifyDataSetChanged();
                         break;
+                    case R.id.sortByAge:
+                        Collections.sort(listStudent, new SortByAge());
+                        adapter.notifyDataSetChanged();
+                        break;
                     case R.id.sortByGpa:
                         Collections.sort(listStudent, new SortByGpa());
                         adapter.notifyDataSetChanged();

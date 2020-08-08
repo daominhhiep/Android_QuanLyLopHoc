@@ -128,7 +128,7 @@ public class TeacherActivity extends AppCompatActivity {
 
     private void showMenuSort() {
         PopupMenu popupMenu = new PopupMenu(this, buttonSort);
-        popupMenu.getMenuInflater().inflate(R.menu.menu_popup, popupMenu.getMenu());
+        popupMenu.getMenuInflater().inflate(R.menu.menu_popup2, popupMenu.getMenu());
         popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem menuItem) {
@@ -137,7 +137,7 @@ public class TeacherActivity extends AppCompatActivity {
                         Collections.sort(teacherList, new SortById());
                         adapter.notifyDataSetChanged();
                         break;
-                    case R.id.sortByGpa:
+                    case R.id.sortByAge:
                         Collections.sort(teacherList, new SortByAge());
                         adapter.notifyDataSetChanged();
                         break;

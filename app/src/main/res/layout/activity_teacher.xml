@@ -79,7 +79,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:inputType="number"
-            android:hint="Năm sinh"
+            android:hint="Tuổi"
             android:fontFamily="@font/bellota"
             android:ems="10"
             android:id="@+id/editTextBirthTeacher"
@@ -103,7 +103,7 @@
     <EditText
             android:layout_width="113dp"
             android:layout_height="wrap_content"
-            android:inputType="numberDecimal"
+            android:inputType="text"
             android:hint="Chức vụ"
             android:fontFamily="@font/bellota"
             android:ems="10"

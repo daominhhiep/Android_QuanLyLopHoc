@@ -29,7 +29,7 @@
             android:id="@+id/textView2"
     />
     <TextView
-            android:text="Tuổi : "
+            android:text="Năm sinh : "
             android:textSize="15sp"
             android:fontFamily="@font/bellota_bold"
             android:layout_below="@id/textView2"
