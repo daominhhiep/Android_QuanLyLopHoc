@@ -2,17 +2,29 @@
 
 <androidx.constraintlayout.widget.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
         android:layout_height="match_parent" android:id="@+id/constraintLayout">
     <Button
             android:text="Thêm"
+            android:fontFamily="@font/bellota_bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/buttonAdd"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="21dp"
             app:layout_constraintTop_toBottomOf="@+id/editTextAddress" android:layout_marginTop="16dp"/>
+    <Button
+            android:text="Sắp xếp"
+            android:layout_width="wrap_content"
+            android:fontFamily="@font/bellota_bold"
+            android:layout_height="wrap_content" android:id="@+id/buttonSort"
+            app:layout_constraintStart_toEndOf="@+id/buttonAdd" android:layout_marginStart="20dp"
+            app:layout_constraintEnd_toStartOf="@+id/buttonEdit" android:layout_marginEnd="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/editTextAddress" android:layout_marginTop="16dp"/>
 
     <Button
             android:text="Sửa"
+            android:fontFamily="@font/bellota_bold"
             android:layout_width="0dp"
             android:layout_height="wrap_content" android:id="@+id/buttonEdit"
             android:layout_marginEnd="21dp" app:layout_constraintEnd_toEndOf="parent"
@@ -30,6 +42,7 @@
             android:layout_width="69dp"
             android:layout_height="wrap_content"
             android:inputType="number"
+            android:fontFamily="@font/bellota"
             android:hint="ID"
             android:id="@+id/editTextId"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="19dp"
@@ -39,6 +52,7 @@
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:hint="Họ tên"
+            android:fontFamily="@font/bellota"
             android:ems="9"
             android:id="@+id/editTextName"
             app:layout_constraintStart_toEndOf="@+id/editTextId" app:layout_constraintTop_toTopOf="parent"
@@ -48,6 +62,7 @@
             android:layout_height="wrap_content"
             android:inputType="number"
             android:hint="Năm sinh"
+            android:fontFamily="@font/bellota"
             android:ems="10"
             android:id="@+id/editTextBirth"
             app:layout_constraintStart_toEndOf="@+id/editTextName"
@@ -58,6 +73,7 @@
             android:layout_height="46dp"
             android:inputType="textPersonName"
             android:hint="Địa chỉ"
+            android:fontFamily="@font/bellota"
             android:ems="10"
             android:id="@+id/editTextAddress"
             android:layout_marginTop="5dp"
@@ -68,30 +84,28 @@
             android:layout_height="46dp"
             android:inputType="numberDecimal"
             android:hint="GPA"
+            android:fontFamily="@font/bellota"
             android:ems="10"
             android:id="@+id/editTextGpa"
             app:layout_constraintStart_toEndOf="@+id/editTextAddress"
             app:layout_constraintTop_toBottomOf="@+id/editTextBirth" android:layout_marginTop="5dp"/>
-    <Button
-            android:text="Sắp xếp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/buttonSort"
-            app:layout_constraintStart_toEndOf="@+id/buttonAdd" android:layout_marginStart="20dp"
-            app:layout_constraintEnd_toStartOf="@+id/buttonEdit" android:layout_marginEnd="20dp"
-            app:layout_constraintTop_toBottomOf="@+id/editTextAddress" android:layout_marginTop="16dp"/>
+
     <RadioGroup
             android:layout_width="86dp"
             android:layout_height="46dp"
+
             android:layout_marginEnd="16dp" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/editTextGpa" app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintTop_toBottomOf="@+id/editTextBirth" android:layout_marginTop="5dp"
             android:id="@+id/checkGender">
         <RadioButton
                 android:text="Nam"
+                android:fontFamily="@font/bellota_bold"
                 android:layout_width="match_parent"
                 android:layout_height="23dp" android:id="@+id/checkMale"/>
         <RadioButton
                 android:text="Nữ"
+                android:fontFamily="@font/bellota_bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/checkFemale"/>
     </RadioGroup>

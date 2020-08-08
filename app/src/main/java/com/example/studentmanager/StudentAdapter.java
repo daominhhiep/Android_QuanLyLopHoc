@@ -24,7 +24,6 @@ public class StudentAdapter extends BaseAdapter {
     }
 
 
-    //tra ve so dong cua list
     @Override
     public int getCount() {
         return studentList.size();
@@ -62,7 +61,7 @@ public class StudentAdapter extends BaseAdapter {
 
         txtID.setText(String.valueOf(student.getId()));
         txtName.setText(student.getName());
-        txtAge.setText(String.valueOf(student.getBirth()));
+        txtAge.setText(String.valueOf(student.getAge()));
         txtAddress.setText(student.getAddress());
         txtGpa.setText(String.valueOf(student.getGpa()));
         imgAvatar.setImageResource(student.getAvatarStudent());

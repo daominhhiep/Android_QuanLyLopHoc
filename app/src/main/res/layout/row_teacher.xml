@@ -7,100 +7,101 @@
 
     <ImageView
             android:layout_width="96dp"
-            android:layout_height="96dp" tools:srcCompat="@tools:sample/avatars"
-            android:id="@+id/imageViewAvt"/>
+            android:layout_height="96dp"
+            tools:srcCompat="@tools:sample/avatars"
+            android:id="@+id/imageViewAvtTeacher"/>
     <TextView
             android:text="ID : "
             android:fontFamily="@font/bellota_bold"
             android:textSize="15sp"
-            android:layout_toRightOf="@id/imageViewAvt"
+            android:layout_toRightOf="@id/imageViewAvtTeacher"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView1"
+            android:id="@+id/textView1Teacher"
     />
     <TextView
             android:text="Họ tên : "
             android:textSize="15sp"
             android:fontFamily="@font/bellota_bold"
-            android:layout_below="@id/textView1"
-            android:layout_toRightOf="@id/imageViewAvt"
+            android:layout_below="@id/textView1Teacher"
+            android:layout_toRightOf="@id/imageViewAvtTeacher"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView2"
+            android:id="@+id/textView2Teacher"
     />
     <TextView
             android:text="Tuổi : "
             android:textSize="15sp"
             android:fontFamily="@font/bellota_bold"
-            android:layout_below="@id/textView2"
-            android:layout_toRightOf="@id/imageViewAvt"
+            android:layout_below="@id/textView2Teacher"
+            android:layout_toRightOf="@id/imageViewAvtTeacher"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView3"
+            android:id="@+id/textView3Teacher"
     />
     <TextView
             android:text="Địa chỉ: "
             android:textSize="15sp"
             android:fontFamily="@font/bellota_bold"
-            android:layout_below="@id/textView3"
-            android:layout_toRightOf="@id/imageViewAvt"
+            android:layout_below="@id/textView3Teacher"
+            android:layout_toRightOf="@id/imageViewAvtTeacher"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView4"
+            android:id="@+id/textView4Teacher"
     />
     <TextView
-            android:text="Điểm trung bình : "
+            android:text="Chức vụ : "
             android:textSize="15sp"
             android:fontFamily="@font/bellota_bold"
-            android:layout_below="@id/textView4"
-            android:layout_toRightOf="@id/imageViewAvt"
+            android:layout_below="@id/textView4Teacher"
+            android:layout_toRightOf="@id/imageViewAvtTeacher"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView5"
+            android:id="@+id/textView5Teacher"
     />
 
 
     <TextView
-            android:id="@+id/textViewId"
+            android:id="@+id/textViewIdTeacher"
             android:textColor="#000000"
             android:fontFamily="@font/bellota"
-            android:layout_toRightOf="@id/textView1"
+            android:layout_toRightOf="@id/textView1Teacher"
             android:textSize="15sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     <TextView
-            android:id="@+id/textViewName"
+            android:id="@+id/textViewNameTeacher"
             android:textColor="#000000"
             android:fontFamily="@font/bellota"
-            android:layout_toRightOf="@id/textView2"
-            android:layout_below="@id/textViewId"
+            android:layout_toRightOf="@id/textView2Teacher"
+            android:layout_below="@id/textViewIdTeacher"
             android:textSize="15sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     <TextView
-            android:id="@+id/textViewAge"
+            android:id="@+id/textViewAgeTeacher"
             android:textColor="#000000"
             android:fontFamily="@font/bellota"
-            android:layout_toRightOf="@id/textView3"
-            android:layout_below="@id/textViewName"
+            android:layout_toRightOf="@id/textView3Teacher"
+            android:layout_below="@id/textViewNameTeacher"
             android:textSize="15sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     <TextView
-            android:id="@+id/textViewAddress"
+            android:id="@+id/textViewAddressTeacher"
             android:textColor="#000000"
             android:fontFamily="@font/bellota"
-            android:layout_toRightOf="@id/textView4"
-            android:layout_below="@id/textViewAge"
+            android:layout_toRightOf="@id/textView4Teacher"
+            android:layout_below="@id/textViewAgeTeacher"
             android:textSize="15sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     <TextView
-            android:id="@+id/textViewGpa"
+            android:id="@+id/textViewRoleTeacher"
             android:textColor="#000000"
             android:fontFamily="@font/bellota"
-            android:layout_toRightOf="@id/textView5"
-            android:layout_below="@id/textViewAddress"
+            android:layout_toRightOf="@id/textView5Teacher"
+            android:layout_below="@id/textViewAddressTeacher"
             android:textSize="15sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>

@@ -19,6 +19,14 @@ public class MenuActivity extends AppCompatActivity {
         buttonStudentManager = (Button) findViewById(R.id.studentManager);
         buttonChangePassword = (Button) findViewById(R.id.changePass);
 
+        buttonTeacherManager.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(MenuActivity.this, TeacherActivity.class);
+                MenuActivity.this.startActivity(myIntent);
+            }
+        });
+
         buttonStudentManager.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

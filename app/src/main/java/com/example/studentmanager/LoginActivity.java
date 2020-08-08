@@ -17,11 +17,24 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_layout);
 
-        editTextUsername = (EditText) findViewById(R.id.userName);
-        editTextPassword = (EditText) findViewById(R.id.password);
-        buttonAgree = (Button) findViewById(R.id.buttonAgree);
-        buttonDisagree = (Button) findViewById(R.id.buttonDisagree);
+        initView();
+        onClickAgree();
+        onClickDisagree();
+    }
 
+    private void onClickDisagree() {
+        buttonDisagree.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent homeIntent = new Intent(Intent.ACTION_MAIN);
+                homeIntent.addCategory( Intent.CATEGORY_HOME );
+                homeIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(homeIntent);
+            }
+        });
+    }
+
+    private void onClickAgree() {
         buttonAgree.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -36,15 +49,12 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
+    }
 
-        buttonDisagree.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent homeIntent = new Intent(Intent.ACTION_MAIN);
-                homeIntent.addCategory( Intent.CATEGORY_HOME );
-                homeIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(homeIntent);
-            }
-        });
+    private void initView() {
+        editTextUsername = (EditText) findViewById(R.id.userName);
+        editTextPassword = (EditText) findViewById(R.id.password);
+        buttonAgree = (Button) findViewById(R.id.buttonAgree);
+        buttonDisagree = (Button) findViewById(R.id.buttonDisagree);
     }
 }

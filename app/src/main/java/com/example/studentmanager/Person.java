@@ -5,17 +5,17 @@ import java.io.Serializable;
 public class Person implements Serializable {
     private String id;
     private String name;
-    private String birth;
+    private String age;
     private String address;
 
     private  Person(){
 
     }
 
-    public Person(String id, String name, String birth, String address) {
+    public Person(String id, String name, String age, String address) {
         this.id = id;
         this.name = name;
-        this.birth = birth;
+        this.age = age;
         this.address = address;
     }
 
@@ -35,12 +35,12 @@ public class Person implements Serializable {
         this.name = name;
     }
 
-    public String getBirth() {
-        return birth;
+    public String getAge() {
+        return age;
     }
 
-    public void setBirth(String birth) {
-        this.birth = birth;
+    public void setAge(String age) {
+        this.age = age;
     }
 
     public String getAddress() {
@@ -56,7 +56,7 @@ public class Person implements Serializable {
         return "Person{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
-                ", birth='" + birth + '\'' +
+                ", age='" + age + '\'' +
                 ", address='" + address + '\'' +
                 '}';
     }

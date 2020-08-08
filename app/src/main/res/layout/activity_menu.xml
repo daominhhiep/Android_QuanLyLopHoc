@@ -5,19 +5,28 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/background"
         tools:context=".MenuActivity">
 
 
     <Button
             android:text="Sinh viên"
             android:layout_width="match_parent"
+            android:background="@drawable/custom_button"
+            android:fontFamily="@font/bellota_bold"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:layout_height="wrap_content" android:id="@+id/studentManager"
-            android:layout_marginTop="32dp" app:layout_constraintTop_toBottomOf="@+id/teacherManager"
+            android:layout_marginTop="50dp" app:layout_constraintTop_toBottomOf="@+id/teacherManager"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"/>
     <Button
             android:text="Giáo viên"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/bellota_bold"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/custom_button"
             android:id="@+id/teacherManager"
             app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="200dp"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"/>
@@ -25,7 +34,11 @@
             android:text="Đổi mật khẩu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/bellota_bold"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/custom_button"
             android:id="@+id/changePass"
-            app:layout_constraintTop_toBottomOf="@+id/studentManager" android:layout_marginTop="32dp"
+            app:layout_constraintTop_toBottomOf="@+id/studentManager" android:layout_marginTop="50dp"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
