@@ -1,5 +1,6 @@
 package com.example.studentmanager.teacher;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,6 +41,7 @@ public class TeacherAdapter extends BaseAdapter {
         return 0;
     }
 
+    @SuppressLint("ViewHolder")
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
 
@@ -51,6 +53,7 @@ public class TeacherAdapter extends BaseAdapter {
         TextView txtNameTeacher = (TextView) view.findViewById(R.id.textViewNameTeacher);
         TextView txtAgeTeacher = (TextView) view.findViewById(R.id.textViewAgeTeacher);
         TextView txtAddressTeacher = (TextView) view.findViewById(R.id.textViewAddressTeacher);
+        TextView txtClass = (TextView) view.findViewById(R.id.textViewClassTeacher);
         TextView txtRoleTeacher = (TextView) view.findViewById(R.id.textViewRoleTeacher);
         ImageView imgAvatarTeacher = (ImageView) view.findViewById(R.id.imageViewAvtTeacher);
 
@@ -60,6 +63,7 @@ public class TeacherAdapter extends BaseAdapter {
         txtNameTeacher.setText(teacher.getName());
         txtAgeTeacher.setText(String.valueOf(teacher.getAge()));
         txtAddressTeacher.setText(teacher.getAddress());
+        txtClass.setText(teacher.getClassroom());
         txtRoleTeacher.setText(String.valueOf(teacher.getRoles()));
         imgAvatarTeacher.setImageResource(teacher.getAvatarTeacher());
 

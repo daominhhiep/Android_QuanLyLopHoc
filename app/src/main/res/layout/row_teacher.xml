@@ -59,6 +59,15 @@
             android:layout_height="wrap_content"
             android:id="@+id/textView5Teacher"
     />
+    <TextView
+            android:text="Lớp : "
+            android:fontFamily="@font/bellota_bold"
+            android:textSize="15sp"
+            android:layout_toRightOf="@id/textViewIdTeacher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewTeacher"
+    />
 
 
     <TextView
@@ -67,7 +76,7 @@
             android:fontFamily="@font/bellota"
             android:layout_toRightOf="@id/textView1Teacher"
             android:textSize="15sp"
-            android:layout_width="match_parent"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"/>
     <TextView
             android:id="@+id/textViewNameTeacher"
@@ -78,6 +87,15 @@
             android:textSize="15sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
+
+
+    <TextView android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:id="@+id/textViewClassTeacher"
+              android:textColor="#000000"
+              android:fontFamily="@font/bellota"
+              android:textSize="15sp"
+              android:layout_toRightOf="@id/textViewTeacher"/>
     <TextView
             android:id="@+id/textViewAgeTeacher"
             android:textColor="#000000"

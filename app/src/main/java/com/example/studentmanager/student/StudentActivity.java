@@ -25,7 +25,7 @@ public class StudentActivity extends AppCompatActivity {
     List<Student> listStudent;
     StudentAdapter adapter;
     Button buttonAdd, buttonEdit, buttonSort;
-    EditText editTextId, editTextName, editTextBirth, editTextAddress, editTextGpa;
+    EditText editTextId, editTextClass, editTextName, editTextBirth, editTextAddress, editTextGpa;
     RadioGroup groupGender;
     RadioButton checkMale, checkFemale;
 
@@ -50,6 +50,7 @@ public class StudentActivity extends AppCompatActivity {
         buttonSort = (Button) findViewById(R.id.buttonSort);
         editTextId = (EditText) findViewById(R.id.editTextId);
         editTextName = (EditText) findViewById(R.id.editTextName);
+        editTextClass = (EditText) findViewById(R.id.editTextClass);
         editTextBirth = (EditText) findViewById(R.id.editTextBirth);
         editTextAddress = (EditText) findViewById(R.id.editTextAddress);
         editTextGpa = (EditText) findViewById(R.id.editTextGpa);
@@ -97,6 +98,7 @@ public class StudentActivity extends AppCompatActivity {
                 editTextName.setText(listStudent.get(i).getName());
                 editTextBirth.setText(listStudent.get(i).getAge());
                 editTextAddress.setText(listStudent.get(i).getAddress());
+                editTextClass.setText(listStudent.get(i).getClassroom());
                 editTextGpa.setText(listStudent.get(i).getGpa());
                 index = i;
             }
@@ -169,7 +171,7 @@ public class StudentActivity extends AppCompatActivity {
         popupMenu.show();
     }
 
-    private void onClickButtonAdd() {
+    public void onClickButtonAdd() {
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -177,9 +179,10 @@ public class StudentActivity extends AppCompatActivity {
                 String name = editTextName.getText().toString();
                 String birth = editTextBirth.getText().toString();
                 String address = editTextAddress.getText().toString();
+                String classroom = editTextClass.getText().toString();
                 String gpa = editTextGpa.getText().toString();
                 int gender = getGender();
-                listStudent.add(new Student(id, name, birth, address, gpa, gender));
+                listStudent.add(new Student(id, name, birth, address, classroom, gpa, gender));
                 write(listStudent);
                 adapter.notifyDataSetChanged();
             }
@@ -194,9 +197,10 @@ public class StudentActivity extends AppCompatActivity {
                 String name = editTextName.getText().toString();
                 String birth = editTextBirth.getText().toString();
                 String address = editTextAddress.getText().toString();
+                String classroom = editTextClass.getText().toString();
                 String gpa = editTextGpa.getText().toString();
                 int gender = getGender();
-                listStudent.add(new Student(id, name, birth, address, gpa, gender));
+                listStudent.add(new Student(id, name, birth, address, classroom, gpa, gender));
                 listStudent.remove(index);
                 write(listStudent);
                 adapter.notifyDataSetChanged();
@@ -205,9 +209,9 @@ public class StudentActivity extends AppCompatActivity {
     }
 
     private void write(List<Student> studentList) {
-                try {
-                    FileOutputStream fileOutputStream = this.openFileOutput(STUDENT_FILE, MODE_PRIVATE);
-                    ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+        try {
+            FileOutputStream fileOutputStream = this.openFileOutput(STUDENT_FILE, MODE_PRIVATE);
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
             objectOutputStream.writeObject(studentList);
             objectOutputStream.close();
         } catch (Exception e) {

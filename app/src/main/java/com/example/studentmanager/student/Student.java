@@ -9,15 +9,15 @@ public class Student extends Person implements Serializable {
     private int avatarStudent;
 
 
-    public Student(String id, String name, String birth, String address, String gpa) {
-        super(id, name, birth, address);
+    public Student(String id, String name, String age, String address, String classroom, String gpa, int avatarStudent) {
+        super(id, name, age, address, classroom);
         this.gpa = gpa;
+        this.avatarStudent = avatarStudent;
     }
 
-    public Student(String id, String name, String birth, String address, String gpa, int avatar) {
-        super(id, name, birth, address);
+    public Student(String id, String name, String birth, String address, String classroom, String gpa) {
+        super(id, name, birth, address, classroom);
         this.gpa = gpa;
-        this.avatarStudent = avatar;
     }
 
     public String getGpa() {

@@ -1,10 +1,11 @@
-package com.example.studentmanager;
+package com.example.studentmanager.classroom;
 
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import com.example.studentmanager.R;
 import com.example.studentmanager.student.Student;
 import com.example.studentmanager.student.StudentActivity;
 import com.example.studentmanager.student.StudentAdapter;
@@ -32,29 +33,19 @@ public class JavaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_java);
+        initView();
+        listStudent = readStudent();
+        listTeacher = readTeacher();
+        filterJava();
+        getCount();
+        setAdapter();
+    }
 
-
+    private void initView() {
         listViewJava = (ListView) findViewById(R.id.listViewJavaStudent);
         listViewJavaTeacher = (ListView) findViewById(R.id.listViewJavaTeacher);
         textViewTeacher = (TextView) findViewById(R.id.textViewTeacherJava);
         textViewStudent = (TextView) findViewById(R.id.textViewStudentJava);
-
-        listStudent = readStudent();
-        listTeacher = readTeacher();
-
-        for (int i = 0; i < listStudent.size(); i++)
-            if (listStudent.get(i).getAddress().equals("Java")) {
-                listStudentClassJava.add(listStudent.get(i));
-            }
-        for (int i = 0; i < listTeacher.size(); i++)
-            if (listTeacher.get(i).getAddress().equals("Java")) {
-                listTeacherClassJava.add(listTeacher.get(i));
-            }
-
-        textViewTeacher.setText("Giáo viên : " + listTeacherClassJava.size());
-        textViewStudent.setText("Học viên : " + listStudentClassJava.size());
-
-        setAdapter();
     }
 
     private void setAdapter() {
@@ -62,6 +53,22 @@ public class JavaActivity extends AppCompatActivity {
         listViewJava.setAdapter(adapterStudent);
         adapterTeacher = new TeacherAdapter(this, R.layout.row_teacher, listTeacherClassJava);
         listViewJavaTeacher.setAdapter(adapterTeacher);
+    }
+
+    private void getCount() {
+        textViewTeacher.setText("Giáo viên lớp Java: " + listTeacherClassJava.size());
+        textViewStudent.setText("Học viên : " + listStudentClassJava.size());
+    }
+
+    private void filterJava() {
+        for (Student student : listStudent)
+            if (student.getClassroom().toLowerCase().matches(".*java*.")) {
+                listStudentClassJava.add(student);
+            }
+        for (Teacher teacher : listTeacher)
+            if (teacher.getClassroom().toLowerCase().matches(".*java*.")) {
+                listTeacherClassJava.add(teacher);
+            }
     }
 
     private List<Student> readStudent() {

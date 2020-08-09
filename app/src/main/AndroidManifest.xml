@@ -13,7 +13,11 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".JavaActivity">
+        <activity android:name=".classroom.PythonActivity">
+        </activity>
+        <activity android:name=".classroom.PhpActivity">
+        </activity>
+        <activity android:name=".classroom.JavaActivity">
         </activity>
         <activity android:name=".ClassActivity">
         </activity>

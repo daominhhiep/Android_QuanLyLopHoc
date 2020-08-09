@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_height="match_parent"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent">
+    <TextView android:id="@+id/textViewTeacherPython"
+              android:layout_marginTop="15dp"
+              android:fontFamily="@font/bellota"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="20dp"
+              android:text="Giáo viên"
+              android:textSize="20dp"/>
+
+    <ListView android:layout_width="392dp"
+              android:layout_height="201dp"
+              android:layout_marginLeft="10dp"
+              android:layout_below="@+id/textViewTeacherPython"
+              android:id="@+id/listViewPythonTeacher"/>
+
+    <TextView android:id="@+id/textViewStudentPython"
+              android:layout_width="wrap_content"
+              android:layout_marginTop="15dp"
+              android:layout_marginLeft="20dp"
+              android:fontFamily="@font/bellota"
+              android:layout_height="wrap_content"
+              android:text="Học viên"
+              android:layout_below="@id/listViewPythonTeacher"
+              android:textSize="20dp"/>
+
+    <ListView android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_below="@+id/textViewStudentPython"
+              android:layout_marginBottom="15dp"
+              android:layout_marginLeft="10dp"
+              android:id="@+id/listViewPythonStudent"/>
+</RelativeLayout>

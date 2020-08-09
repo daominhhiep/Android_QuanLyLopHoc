@@ -7,16 +7,18 @@ public class Person implements Serializable {
     private String name;
     private String age;
     private String address;
+    private String classroom;
 
     private  Person(){
 
     }
 
-    public Person(String id, String name, String age, String address) {
+    public Person(String id, String name, String age, String address, String classroom) {
         this.id = id;
         this.name = name;
         this.age = age;
         this.address = address;
+        this.classroom = classroom;
     }
 
     public String getId() {
@@ -51,6 +53,14 @@ public class Person implements Serializable {
         this.address = address;
     }
 
+    public String getClassroom() {
+        return classroom;
+    }
+
+    public void setClassroom(String classroom) {
+        this.classroom = classroom;
+    }
+
     @Override
     public String toString() {
         return "Person{" +
@@ -58,6 +68,7 @@ public class Person implements Serializable {
                 ", name='" + name + '\'' +
                 ", age='" + age + '\'' +
                 ", address='" + address + '\'' +
+                ", classroom='" + classroom + '\'' +
                 '}';
     }
 }

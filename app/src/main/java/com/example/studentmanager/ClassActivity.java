@@ -5,7 +5,9 @@ import android.view.View;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import com.example.studentmanager.student.StudentActivity;
+import com.example.studentmanager.classroom.JavaActivity;
+import com.example.studentmanager.classroom.PhpActivity;
+import com.example.studentmanager.classroom.PythonActivity;
 
 public class ClassActivity extends AppCompatActivity {
     Button buttonClassJava, buttonClassPhp, buttonClassPython;
@@ -30,7 +32,7 @@ public class ClassActivity extends AppCompatActivity {
         buttonClassPhp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(ClassActivity.this, JavaActivity.class);
+                Intent myIntent = new Intent(ClassActivity.this, PhpActivity.class);
                 ClassActivity.this.startActivity(myIntent);
             }
         });
@@ -38,7 +40,7 @@ public class ClassActivity extends AppCompatActivity {
         buttonClassPython.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(ClassActivity.this, JavaActivity.class);
+                Intent myIntent = new Intent(ClassActivity.this, PythonActivity.class);
                 ClassActivity.this.startActivity(myIntent);
             }
         });

@@ -17,18 +17,25 @@
             android:text="Sắp xếp"
             android:layout_width="wrap_content"
             android:fontFamily="@font/bellota_bold"
-            android:layout_height="wrap_content" android:id="@+id/buttonSort"
-            app:layout_constraintStart_toEndOf="@+id/buttonAdd" android:layout_marginStart="20dp"
-            app:layout_constraintEnd_toStartOf="@+id/buttonEdit" android:layout_marginEnd="20dp"
-            app:layout_constraintTop_toBottomOf="@+id/editTextAddress" android:layout_marginTop="16dp"/>
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonSort"
+            app:layout_constraintStart_toEndOf="@+id/buttonAdd"
+            android:layout_marginStart="20dp"
+            app:layout_constraintEnd_toStartOf="@+id/buttonEdit"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/editTextAddress"
+            android:layout_marginTop="16dp"/>
 
     <Button
             android:text="Sửa"
             android:fontFamily="@font/bellota_bold"
             android:layout_width="0dp"
-            android:layout_height="wrap_content" android:id="@+id/buttonEdit"
-            android:layout_marginEnd="21dp" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="16dp" app:layout_constraintTop_toBottomOf="@+id/checkGender"/>
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonEdit"
+            android:layout_marginEnd="21dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/checkGender"/>
     <ListView
             android:layout_width="312dp"
             android:layout_height="0dp"
@@ -74,8 +81,8 @@
             app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="16dp" android:layout_marginEnd="21dp"
             app:layout_constraintEnd_toEndOf="parent"/>
     <EditText
-            android:layout_width="0dp"
-            android:layout_height="46dp"
+            android:layout_width="127dp"
+            android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:hint="Địa chỉ"
             android:fontFamily="@font/bellota"
@@ -86,7 +93,7 @@
             android:layout_marginStart="21dp"/>
     <EditText
             android:layout_width="71dp"
-            android:layout_height="46dp"
+            android:layout_height="wrap_content"
             android:inputType="numberDecimal"
             android:hint="GPA"
             android:fontFamily="@font/bellota"
@@ -94,25 +101,36 @@
             android:id="@+id/editTextGpa"
             app:layout_constraintStart_toEndOf="@+id/editTextAddress"
             app:layout_constraintTop_toBottomOf="@+id/editTextBirth" android:layout_marginTop="5dp"/>
-
+    <EditText
+            android:layout_width="85dp"
+            android:layout_height="48dp"
+            android:inputType="textPersonName"
+            android:fontFamily="@font/bellota"
+            android:hint="Lớp"
+            android:id="@+id/editTextClass"
+            app:layout_constraintStart_toEndOf="@+id/editTextGpa"
+            app:layout_constraintTop_toBottomOf="@+id/editTextBirth"
+            android:layout_marginTop="4dp"
+            app:layout_constraintEnd_toStartOf="@+id/checkGender"/>
     <RadioGroup
             android:layout_width="86dp"
-            android:layout_height="46dp"
+            android:layout_height="wrap_content"
 
             android:layout_marginEnd="16dp" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/editTextGpa" app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintTop_toBottomOf="@+id/editTextBirth" android:layout_marginTop="5dp"
-            android:id="@+id/checkGender">
+            android:id="@+id/checkGender"
+            app:layout_constraintStart_toEndOf="@+id/editTextClass">
         <RadioButton
                 android:text="Nam"
                 android:fontFamily="@font/bellota_bold"
                 android:layout_width="match_parent"
-                android:layout_height="23dp" android:id="@+id/checkMale"/>
+                android:layout_height="24dp" android:id="@+id/checkMale"/>
         <RadioButton
                 android:text="Nữ"
                 android:fontFamily="@font/bellota_bold"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/checkFemale"/>
+                android:layout_height="24dp" android:id="@+id/checkFemale"/>
     </RadioGroup>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

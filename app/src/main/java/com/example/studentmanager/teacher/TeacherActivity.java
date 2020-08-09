@@ -26,7 +26,7 @@ public class TeacherActivity extends AppCompatActivity {
     List<Teacher> teacherList;
     TeacherAdapter adapter;
     Button buttonAdd, buttonEdit, buttonSort;
-    EditText editTextId, editTextName, editTextBirth, editTextAddress, editTextRole;
+    EditText editTextId, editTextName, editTextBirth, editTextAddress, editTextRole, editTextClass;
     RadioGroup groupGender;
     RadioButton checkMale, checkFemale;
 
@@ -81,6 +81,7 @@ public class TeacherActivity extends AppCompatActivity {
                 editTextName.setText(teacherList.get(i).getName());
                 editTextBirth.setText(teacherList.get(i).getAge());
                 editTextAddress.setText(teacherList.get(i).getAddress());
+                editTextClass.setText(teacherList.get(i).getClassroom());
                 editTextRole.setText(teacherList.get(i).getRoles());
                 index = i;
             }
@@ -118,7 +119,6 @@ public class TeacherActivity extends AppCompatActivity {
         alertDialog.show();
     }
 
-
     private void onClickButtonSort() {
         buttonSort.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -127,7 +127,6 @@ public class TeacherActivity extends AppCompatActivity {
             }
         });
     }
-
 
     private void showMenuSort() {
         PopupMenu popupMenu = new PopupMenu(this, buttonSort);
@@ -160,8 +159,9 @@ public class TeacherActivity extends AppCompatActivity {
                 String age = editTextBirth.getText().toString();
                 String address = editTextAddress.getText().toString();
                 String role = editTextRole.getText().toString();
+                String classroom = editTextClass.getText().toString();
                 int gender = getGender();
-                teacherList.add(new Teacher(id, name, age, address, role, gender));
+                teacherList.add(new Teacher(id, name, age, address, classroom, role, gender));
                 write(teacherList);
                 adapter.notifyDataSetChanged();
             }
@@ -177,8 +177,9 @@ public class TeacherActivity extends AppCompatActivity {
                 String age = editTextBirth.getText().toString();
                 String address = editTextAddress.getText().toString();
                 String role = editTextRole.getText().toString();
+                String classroom = editTextClass.getText().toString();
                 int gender = getGender();
-                teacherList.add(new Teacher(id, name, age, address, role, gender));
+                teacherList.add(new Teacher(id, name, age, address, classroom, role, gender));
                 teacherList.remove(index);
                 write(teacherList);
                 adapter.notifyDataSetChanged();
@@ -192,8 +193,9 @@ public class TeacherActivity extends AppCompatActivity {
         buttonSort = (Button) findViewById(R.id.buttonSortTeacher);
         editTextId = (EditText) findViewById(R.id.editTextIdTeacher);
         editTextName = (EditText) findViewById(R.id.editTextNameTeacher);
-        editTextBirth = (EditText) findViewById(R.id.editTextBirthTeacher);
+        editTextBirth = (EditText) findViewById(R.id.editTextAgeTeacher);
         editTextAddress = (EditText) findViewById(R.id.editTextAddressTeacher);
+        editTextClass = (EditText) findViewById(R.id.editTextClassTeacher);
         editTextRole = (EditText) findViewById(R.id.editTextRoleTeacher);
         groupGender = (RadioGroup) findViewById(R.id.checkGenderTeacher);
         checkMale = (RadioButton) findViewById(R.id.checkMaleTeacher);
