@@ -10,6 +10,8 @@ import android.os.Bundle;
 import com.example.studentmanager.R;
 import com.example.studentmanager.commom.SortByAge;
 import com.example.studentmanager.commom.SortById;
+import com.example.studentmanager.student.Student;
+import com.example.studentmanager.student.StudentActivity;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -161,9 +163,17 @@ public class TeacherActivity extends AppCompatActivity {
                 String role = editTextRole.getText().toString();
                 String classroom = editTextClass.getText().toString();
                 int gender = getGender();
-                teacherList.add(new Teacher(id, name, age, address, classroom, role, gender));
-                write(teacherList);
-                adapter.notifyDataSetChanged();
+                if(id.equals("")) {
+                    Toast.makeText(TeacherActivity.this, "Vui lòng nhập ID", Toast.LENGTH_SHORT).show();
+                } else if (name.equals("") && age.equals("") && address.equals("")){
+                    Toast.makeText(TeacherActivity.this, "Vui lòng nhập đầy đủ thông tin cá nhân", Toast.LENGTH_SHORT).show();
+                } else if (gender == 0){
+                    Toast.makeText(TeacherActivity.this, "Vui lòng chọn giới tính", Toast.LENGTH_SHORT).show();
+                } else {
+                    teacherList.add(new Teacher(id, name, age, address, classroom, role, gender));
+                    write(teacherList);
+                    adapter.notifyDataSetChanged();
+                }
             }
         });
     }
@@ -179,10 +189,22 @@ public class TeacherActivity extends AppCompatActivity {
                 String role = editTextRole.getText().toString();
                 String classroom = editTextClass.getText().toString();
                 int gender = getGender();
-                teacherList.add(new Teacher(id, name, age, address, classroom, role, gender));
-                teacherList.remove(index);
-                write(teacherList);
-                adapter.notifyDataSetChanged();
+                if(index != -1){
+                    if (id.equals("")) {
+                        Toast.makeText(TeacherActivity.this, "Vui lòng nhập ID", Toast.LENGTH_SHORT).show();
+                    } else if (name.equals("") && age.equals("") && address.equals("")) {
+                        Toast.makeText(TeacherActivity.this, "Vui lòng nhập đầy đủ thông tin cá nhân", Toast.LENGTH_SHORT).show();
+                    } else if (gender == 0) {
+                        Toast.makeText(TeacherActivity.this, "Vui lòng chọn giới tính", Toast.LENGTH_SHORT).show();
+                    } else {
+                        teacherList.add(new Teacher(id, name, age, address, classroom, role, gender));
+                        teacherList.remove(index);
+                        write(teacherList);
+                        adapter.notifyDataSetChanged();
+                    }
+                } else {
+                    Toast.makeText(TeacherActivity.this,"Vui lòng chọn giáo viên muốn sửa", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

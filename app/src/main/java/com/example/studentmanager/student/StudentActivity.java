@@ -29,6 +29,7 @@ public class StudentActivity extends AppCompatActivity {
     RadioGroup groupGender;
     RadioButton checkMale, checkFemale;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -182,9 +183,17 @@ public class StudentActivity extends AppCompatActivity {
                 String classroom = editTextClass.getText().toString();
                 String gpa = editTextGpa.getText().toString();
                 int gender = getGender();
-                listStudent.add(new Student(id, name, birth, address, classroom, gpa, gender));
-                write(listStudent);
-                adapter.notifyDataSetChanged();
+                if (id.equals("")) {
+                    Toast.makeText(StudentActivity.this, "Vui lòng nhập ID", Toast.LENGTH_SHORT).show();
+                } else if (name.equals("") && birth.equals("") && address.equals("")) {
+                    Toast.makeText(StudentActivity.this, "Vui lòng nhập đầy đủ thông tin cá nhân", Toast.LENGTH_SHORT).show();
+                } else if (gender == 0) {
+                    Toast.makeText(StudentActivity.this, "Vui lòng chọn giới tính", Toast.LENGTH_SHORT).show();
+                } else {
+                    listStudent.add(new Student(id, name, birth, address, classroom, gpa, gender));
+                    write(listStudent);
+                    adapter.notifyDataSetChanged();
+                }
             }
         });
     }
@@ -200,10 +209,22 @@ public class StudentActivity extends AppCompatActivity {
                 String classroom = editTextClass.getText().toString();
                 String gpa = editTextGpa.getText().toString();
                 int gender = getGender();
-                listStudent.add(new Student(id, name, birth, address, classroom, gpa, gender));
-                listStudent.remove(index);
-                write(listStudent);
-                adapter.notifyDataSetChanged();
+                if (index != -1) {
+                    if (id.equals("")) {
+                        Toast.makeText(StudentActivity.this, "Vui lòng nhập ID", Toast.LENGTH_SHORT).show();
+                    } else if (name.equals("") && birth.equals("") && address.equals("")) {
+                        Toast.makeText(StudentActivity.this, "Vui lòng nhập đầy đủ thông tin cá nhân", Toast.LENGTH_SHORT).show();
+                    } else if (gender == 0) {
+                        Toast.makeText(StudentActivity.this, "Vui lòng chọn giới tính", Toast.LENGTH_SHORT).show();
+                    } else {
+                        listStudent.add(new Student(id, name, birth, address, classroom, gpa, gender));
+                        listStudent.remove(index);
+                        write(listStudent);
+                        adapter.notifyDataSetChanged();
+                    }
+                } else {
+                    Toast.makeText(StudentActivity.this, "Vui lòng chọn sinh viên muốn sửa", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
@@ -215,7 +236,7 @@ public class StudentActivity extends AppCompatActivity {
             objectOutputStream.writeObject(studentList);
             objectOutputStream.close();
         } catch (Exception e) {
-            Toast.makeText(this, "Error:" + e.getMessage(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Lỗi : " + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -227,7 +248,7 @@ public class StudentActivity extends AppCompatActivity {
             studentList = (List<Student>) objectInputStream.readObject();
             objectInputStream.close();
         } catch (Exception e) {
-            Toast.makeText(this, "Error:" + e.getMessage(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Lỗi : " + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
         return studentList;
     }
