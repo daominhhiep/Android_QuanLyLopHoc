@@ -11,7 +11,8 @@ import android.os.Bundle;
 import com.example.studentmanager.*;
 import com.example.studentmanager.commom.SortByAge;
 import com.example.studentmanager.commom.SortByGpa;
-import com.example.studentmanager.commom.SortById;
+import com.example.studentmanager.commom.SortByIdToDown;
+import com.example.studentmanager.commom.SortByIdToUp;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -153,8 +154,12 @@ public class StudentActivity extends AppCompatActivity {
             @Override
             public boolean onMenuItemClick(MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
-                    case R.id.sortById:
-                        Collections.sort(listStudent, new SortById());
+                    case R.id.sortByIdToUp:
+                        Collections.sort(listStudent, new SortByIdToUp());
+                        adapter.notifyDataSetChanged();
+                        break;
+                    case R.id.sortByIdToDown:
+                        Collections.sort(listStudent, new SortByIdToDown());
                         adapter.notifyDataSetChanged();
                         break;
                     case R.id.sortByAge:

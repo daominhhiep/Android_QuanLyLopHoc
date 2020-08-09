@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:title="Sắp xếp theo ID"
-          android:id="@+id/sortById"/>
+    <item android:title="Sắp xếp theo ID tăng dần"
+          android:id="@+id/sortByIdToUp"/>
+    <item android:title="Sắp xếp theo ID giảm dần"
+          android:id="@+id/sortByIdToDown"/>
     <item android:title="Sắp xếp theo năm sinh"
           android:id="@+id/sortByAge"/>
     <item android:title="Sắp xếp theo GPA"

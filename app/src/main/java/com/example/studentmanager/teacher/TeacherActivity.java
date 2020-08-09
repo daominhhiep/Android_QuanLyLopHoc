@@ -9,9 +9,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import com.example.studentmanager.R;
 import com.example.studentmanager.commom.SortByAge;
-import com.example.studentmanager.commom.SortById;
-import com.example.studentmanager.student.Student;
-import com.example.studentmanager.student.StudentActivity;
+import com.example.studentmanager.commom.SortByIdToDown;
+import com.example.studentmanager.commom.SortByIdToUp;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -137,8 +136,12 @@ public class TeacherActivity extends AppCompatActivity {
             @Override
             public boolean onMenuItemClick(MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
-                    case R.id.sortById:
-                        Collections.sort(teacherList, new SortById());
+                    case R.id.sortByIdToUp:
+                        Collections.sort(teacherList, new SortByIdToUp());
+                        adapter.notifyDataSetChanged();
+                        break;
+                    case R.id.sortByIdToDown:
+                        Collections.sort(teacherList, new SortByIdToDown());
                         adapter.notifyDataSetChanged();
                         break;
                     case R.id.sortByAge:
