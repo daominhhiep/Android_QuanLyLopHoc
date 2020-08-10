@@ -15,20 +15,19 @@
             android:gravity="center"
             android:padding="20dp"
             android:textSize="35dp"
-            android:layout_marginTop="180dp"
-            android:fontFamily="@font/bellota"/>
+            android:layout_marginTop="150dp"
+            android:fontFamily="@font/playfair"/>
     <EditText
-
             android:id="@+id/userName"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:inputType="textPersonName"
             android:hint="Username"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="40dp"
             android:layout_marginRight="15dp"
             android:layout_marginLeft="10dp"
             android:background="@drawable/custom_edittext"
-            android:fontFamily="@font/bellota_bold"/>
+            android:fontFamily="@font/playfair_medium"/>
     <EditText
             android:id="@+id/password"
             android:hint="Password"
@@ -39,7 +38,7 @@
             android:layout_height="50dp"
             android:background="@drawable/custom_edittext"
             android:inputType="textPassword"
-            android:fontFamily="@font/bellota_bold"/>
+            android:fontFamily="@font/playfair_medium"/>
     <LinearLayout
             android:layout_marginTop="40dp"
             android:weightSum="10"
@@ -53,7 +52,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/custom_button"
-                android:fontFamily="@font/bellota_bold"/>
+                android:fontFamily="@font/playfair_medium"/>
         <Button
                 android:id="@+id/buttonDisagree"
                 android:layout_weight="5"
@@ -62,7 +61,7 @@
                 android:layout_marginRight="10dp"
                 android:text="Hủy"
                 android:background="@drawable/custom_button"
-                android:fontFamily="@font/bellota_bold"/>
+                android:fontFamily="@font/playfair_medium"/>
     </LinearLayout>
 
 

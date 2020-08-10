@@ -32,7 +32,10 @@ public class SearchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_search);
         initView();
         listStudent = readStudent();
+        onClickButtonSearch();
+    }
 
+    private void onClickButtonSearch() {
         buttonSearchStudent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
