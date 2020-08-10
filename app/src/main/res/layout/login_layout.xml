@@ -24,16 +24,16 @@
             android:inputType="textPersonName"
             android:hint="Username"
             android:layout_marginTop="40dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
             android:background="@drawable/custom_edittext"
             android:fontFamily="@font/playfair_medium"/>
     <EditText
             android:id="@+id/password"
             android:hint="Password"
             android:layout_marginTop="10dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@drawable/custom_edittext"
@@ -48,9 +48,10 @@
                 android:id="@+id/buttonAgree"
                 android:text="Đồng ý"
                 android:layout_weight="5"
-                android:layout_marginRight="10dp"
+                android:layout_marginRight="15dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
                 android:background="@drawable/custom_button"
                 android:fontFamily="@font/playfair_medium"/>
         <Button
@@ -58,7 +59,8 @@
                 android:layout_weight="5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
                 android:text="Hủy"
                 android:background="@drawable/custom_button"
                 android:fontFamily="@font/playfair_medium"/>
