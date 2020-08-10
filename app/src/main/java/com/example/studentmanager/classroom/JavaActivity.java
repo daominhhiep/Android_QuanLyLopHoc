@@ -16,6 +16,7 @@ import com.example.studentmanager.teacher.TeacherAdapter;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class JavaActivity extends AppCompatActivity {
@@ -24,7 +25,7 @@ public class JavaActivity extends AppCompatActivity {
     TextView textViewStudent, textViewTeacher;
     List<Student> listStudent;
     List<Teacher> listTeacher;
-    ListView listViewJava, listViewJavaTeacher;
+    ListView listViewStudentJava, listViewJavaTeacher;
 
     List<Student> listStudentClassJava = new ArrayList<>();
     List<Teacher> listTeacherClassJava = new ArrayList<>();
@@ -36,13 +37,13 @@ public class JavaActivity extends AppCompatActivity {
         initView();
         listStudent = readStudent();
         listTeacher = readTeacher();
+        setAdapter();
         filterJava();
         getCount();
-        setAdapter();
     }
 
     private void initView() {
-        listViewJava = (ListView) findViewById(R.id.listViewJavaStudent);
+        listViewStudentJava = (ListView) findViewById(R.id.listViewJavaStudent);
         listViewJavaTeacher = (ListView) findViewById(R.id.listViewJavaTeacher);
         textViewTeacher = (TextView) findViewById(R.id.textViewTeacherJava);
         textViewStudent = (TextView) findViewById(R.id.textViewStudentJava);
@@ -50,7 +51,7 @@ public class JavaActivity extends AppCompatActivity {
 
     private void setAdapter() {
         adapterStudent = new StudentAdapter(this, R.layout.row_student, listStudentClassJava);
-        listViewJava.setAdapter(adapterStudent);
+        listViewStudentJava.setAdapter(adapterStudent);
         adapterTeacher = new TeacherAdapter(this, R.layout.row_teacher, listTeacherClassJava);
         listViewJavaTeacher.setAdapter(adapterTeacher);
     }

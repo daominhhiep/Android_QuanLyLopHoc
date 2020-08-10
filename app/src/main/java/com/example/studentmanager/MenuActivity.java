@@ -9,7 +9,7 @@ import com.example.studentmanager.student.StudentActivity;
 import com.example.studentmanager.teacher.TeacherActivity;
 
 public class MenuActivity extends AppCompatActivity {
-    Button buttonStudentManager, buttonTeacherManager, buttonClassStudy;
+    Button buttonStudentManager, buttonTeacherManager, buttonClassStudy, buttonSearchByName;
 
 
     @Override
@@ -20,6 +20,7 @@ public class MenuActivity extends AppCompatActivity {
         buttonTeacherManager = (Button) findViewById(R.id.teacherManager);
         buttonStudentManager = (Button) findViewById(R.id.studentManager);
         buttonClassStudy = (Button) findViewById(R.id.classStudy);
+        buttonSearchByName = (Button) findViewById(R.id.searchByName);
 
         buttonTeacherManager.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,6 +42,14 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent myIntent = new Intent(MenuActivity.this, ClassActivity.class);
+                MenuActivity.this.startActivity(myIntent);
+            }
+        });
+
+        buttonSearchByName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(MenuActivity.this, SearchActivity.class);
                 MenuActivity.this.startActivity(myIntent);
             }
         });

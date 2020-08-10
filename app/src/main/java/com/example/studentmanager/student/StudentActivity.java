@@ -245,7 +245,7 @@ public class StudentActivity extends AppCompatActivity {
         }
     }
 
-    private List<Student> read() {
+    public List<Student> read() {
         List<Student> studentList = new ArrayList<>();
         try {
             FileInputStream fileInputStream = this.openFileInput(STUDENT_FILE);

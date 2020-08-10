@@ -28,8 +28,9 @@
             android:layout_marginRight="20dp"
             android:background="@drawable/custom_button"
             android:id="@+id/teacherManager"
-            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="200dp"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="148dp"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.6"/>
     <Button
             android:text="Lớp học"
             android:layout_width="match_parent"
@@ -41,4 +42,15 @@
             android:id="@+id/classStudy"
             app:layout_constraintTop_toBottomOf="@+id/studentManager" android:layout_marginTop="50dp"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"/>
+    <Button
+            android:text="Tìm kiếm sinh viên theo tên"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/searchByName"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/bellota_bold"
+            android:background="@drawable/custom_button"
+            app:layout_constraintTop_toBottomOf="@+id/classStudy"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="20dp" android:layout_marginEnd="20dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
