@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class LoginActivity extends AppCompatActivity {
     EditText editTextUsername, editTextPassword;
     Button buttonAgree, buttonDisagree;
-    String usernameDefault = "admin";
+    String usernameDefault =  "admin";
     String passwordDefault = "admin";
 
     @Override

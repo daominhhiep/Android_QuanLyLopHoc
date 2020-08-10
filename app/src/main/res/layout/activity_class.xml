@@ -10,7 +10,8 @@
 
     <Button
             android:text="JAVA"
-            android:fontFamily="@font/playfair"
+            android:fontFamily="@font/bellota_bold"
+            android:textSize="20dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/custom_button"
@@ -20,7 +21,8 @@
             android:layout_marginTop="180dp"/>
     <Button
             android:text="PHP"
-            android:fontFamily="@font/playfair"
+            android:fontFamily="@font/bellota_bold"
+            android:textSize="20dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/custom_button"
@@ -30,7 +32,8 @@
             app:layout_constraintTop_toBottomOf="@+id/classJava"/>
     <Button
             android:text="PYTHON"
-            android:fontFamily="@font/playfair"
+            android:fontFamily="@font/bellota_bold"
+            android:textSize="20dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/custom_button"

@@ -156,18 +156,22 @@ public class StudentActivity extends AppCompatActivity {
                 switch (menuItem.getItemId()) {
                     case R.id.sortByIdToUp:
                         Collections.sort(listStudent, new SortByIdToUp());
+                        write(listStudent);
                         adapter.notifyDataSetChanged();
                         break;
                     case R.id.sortByIdToDown:
                         Collections.sort(listStudent, new SortByIdToDown());
+                        write(listStudent);
                         adapter.notifyDataSetChanged();
                         break;
                     case R.id.sortByAge:
                         Collections.sort(listStudent, new SortByAge());
+                        write(listStudent);
                         adapter.notifyDataSetChanged();
                         break;
                     case R.id.sortByGpa:
                         Collections.sort(listStudent, new SortByGpa());
+                        write(listStudent);
                         adapter.notifyDataSetChanged();
                         break;
                 }

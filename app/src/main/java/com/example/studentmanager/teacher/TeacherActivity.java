@@ -63,7 +63,7 @@ public class TeacherActivity extends AppCompatActivity {
         });
     }
 
-    private int getGender() {
+    private int getGenderTeacher() {
         int gender = 0;
         if (checkMale.isChecked()) {
             gender = R.drawable.teacher_man;
@@ -138,14 +138,17 @@ public class TeacherActivity extends AppCompatActivity {
                 switch (menuItem.getItemId()) {
                     case R.id.sortByIdToUp:
                         Collections.sort(teacherList, new SortByIdToUp());
+                        write(teacherList);
                         adapter.notifyDataSetChanged();
                         break;
                     case R.id.sortByIdToDown:
                         Collections.sort(teacherList, new SortByIdToDown());
+                        write(teacherList);
                         adapter.notifyDataSetChanged();
                         break;
                     case R.id.sortByAge:
                         Collections.sort(teacherList, new SortByAge());
+                        write(teacherList);
                         adapter.notifyDataSetChanged();
                         break;
                 }
@@ -165,7 +168,7 @@ public class TeacherActivity extends AppCompatActivity {
                 String address = editTextAddress.getText().toString();
                 String role = editTextRole.getText().toString();
                 String classroom = editTextClass.getText().toString();
-                int gender = getGender();
+                int gender = getGenderTeacher();
                 if(id.equals("")) {
                     Toast.makeText(TeacherActivity.this, "Vui lòng nhập ID", Toast.LENGTH_SHORT).show();
                 } else if (name.equals("") && age.equals("") && address.equals("")){
@@ -191,7 +194,7 @@ public class TeacherActivity extends AppCompatActivity {
                 String address = editTextAddress.getText().toString();
                 String role = editTextRole.getText().toString();
                 String classroom = editTextClass.getText().toString();
-                int gender = getGender();
+                int gender = getGenderTeacher();
                 if(index != -1){
                     if (id.equals("")) {
                         Toast.makeText(TeacherActivity.this, "Vui lòng nhập ID", Toast.LENGTH_SHORT).show();
